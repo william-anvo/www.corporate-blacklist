@@ -64,32 +64,34 @@ Route::match(['get', 'post'],'/resetpwd',array(
     'as'=> 'resetpw',
     'uses' =>'HomeController@index'
     ));
+
+
 /*----------------------------*/
 //      Black List Function
 /*----------------------------*/
-//Route::get('/addblacklist',array(
-//    'as'=> 'addblacklist',
-//    'uses' =>'Blacklist.BLController@show'
-//    ));
+Route::match(['get', 'post'],'/custblacklist',array(
+    'as'=> 'cust.blacklist',
+    'uses' =>'Blacklist\CustBlacklistController@show'
+    ));
 
 
 Route::group(['middleware' => 'admin'], function(){
 /*----------------------------*/
 //      Admin Function
 /*----------------------------*/
-Route::match(['get', 'post'], '/admin/blacklist', array(
-    'as'=> 'admin.blacklist',
-    'uses' =>'Admin\AdminController@showAddBlackList'
+//Route::match(['get', 'post'], '/cust/blacklist', array(
+//    'as'=> 'cust.blacklist',
+//    'uses' =>'Admin\AdminController@showBlackList'
+//    ));
+
+Route::match(['get', 'post'], '/custblacklist/add',array(
+    'as'=> 'cust.blacklist.add.show',
+    'uses' =>'Admin\AdminController@showCustBlacklistForm'
     ));
 
-Route::post('/admin/blacklist-do',array(
-    'as'=> 'admin.doaddblacklist',
-    'uses' =>'Admin\AdminController@doAddBlackList'
-    ));
-
-Route::match(['get', 'post'], '/admin/dashboard', array(
-    'as'=> 'admin.dashboard',
-    'uses' =>'Admin\AdminController@showDashboard'
+Route::match(['get', 'post'], '/custblacklist/add/act', array(
+    'as'=> 'cust.blacklist.add.show.act',
+    'uses' =>'Admin\AdminController@addCustBlacklistForm'
     ));
 
 

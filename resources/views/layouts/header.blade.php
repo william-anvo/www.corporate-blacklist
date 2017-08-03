@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>银行卡黑名单</title> <?php //{{ config('app.name', 'XXX') }}// ?>
+    <title>ANVO集团 - 黑名单中心</title> <?php //{{ config('app.name', 'XXX') }}// ?>
     
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -97,7 +97,7 @@ $('#name').blur(function(){
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/home') }}">
-                        <b>银行卡黑名单</b>
+                        <b>ANVO集团 - 黑名单 中心</b>
                     </a>
                 </div>
 
@@ -117,19 +117,42 @@ $('#name').blur(function(){
                                     <b>{{ Auth::user()->name }}</b> <span class="caret"></span>
                                 </a>
                                 <ul class="dropdown-menu" role="menu">
-                             @if (Auth::user()->is_admin == '1')       
+                             <!--@if (Auth::user()->is_admin == '1')-->       
                                     <li>
-                                        <a href="{{ route('admin.blacklist') }}"
+                                        <a href="{{ route('cust.blacklist') }}"
                                             onclick="event.preventDefault();
-                                                     document.getElementById('admin.blacklist').submit();">
-                                                      添加黑名单
+                                                     document.getElementById('cust.blacklist').submit();">
+                                                      【用户卡】黑名单
                                         </a>
-                             @endif
-                                        <form id="admin.blacklist" action="{{ route('admin.blacklist') }}" method="POST" style="display: none;">
+                             <!--@endif-->
+                                        <form id="cust.blacklist" action="{{ route('cust.blacklist') }}" method="POST" style="display: none;">
                                             {{ csrf_field() }}
                                         </form>
                                     </li>
                                     
+                                    <li style="background-color:#999">【公司卡】黑名单
+<!--                                        <a href="#"
+                                            onclick="event.preventDefault();
+                                                     document.getElementById('comp.blacklist').submit();">
+                                                      【公司卡】黑名单
+                                        </a>
+
+                                        <form id="comp.blacklist" action="#" method="POST" style="display: none;">
+                                            {{ csrf_field() }}
+                                        </form>-->
+                                    </li>
+
+                                    <li style="background-color:#999">【I.P】 黑名单
+<!--                                        <a href="#"
+                                            onclick="event.preventDefault();
+                                                     document.getElementById('ip.blacklist').submit();">
+                                                      【I.P】 黑名单
+                                        </a>
+
+                                        <form id="ip.blacklist" action="#" method="POST" style="display: none;">
+                                            {{ csrf_field() }}
+                                        </form>-->
+                                    </li>
                                     <li>
                                         <a href="{{ route('resetpw') }}"
                                             onclick="event.preventDefault();

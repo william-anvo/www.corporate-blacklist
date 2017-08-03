@@ -24,8 +24,10 @@ class BRegisterController extends Controller
         
          $now =new DateTime('now');
 //validate
+request()->merge(array('name' => strtoupper(request()->name)));
+//dd([request()->name, request()->division, request()->password]);
         $this->validate(request(), [
-            'name' => 'required|regex:/([A-Z]{3})-([A-Z]*)/|max:100|unique:users',
+            'name' => 'required|regex:/([A-Z]{3})-([A-Z]{3,20})/|max:100|unique:users', //
             'division' => 'required|string|max:255',
             'password' => 'required|string|min:6|confirmed',
         ]);

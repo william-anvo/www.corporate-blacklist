@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>银行卡黑名单</title>
+        <title>ANVO集团-黑名单中心</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
@@ -79,7 +79,20 @@
 
             <div class="content">
                 <div class="title m-b-md" style="font-size:28px">
-                    Corporation Black Listed Bank Card Listing<br/> 银行卡黑名单 
+                    ANVO Corporation Black-listed Center<br/> ANVO集团 - 黑名单中心
+                    
+                    <p>&nbsp;</p>
+                    
+            @if (Route::has('login'))
+               
+                    @if (Auth::check())
+                    <b><a href="{{ url('/home') }}" style="text-decoration: none;">Home</a></b>
+                    @else
+                        || <b><a href="{{ url('/blogin') }}" style="text-decoration: none;">登录</a></b> || 
+                        <b><a href="{{ url('/bregister') }}" style="text-decoration: none;">注册</a></b> || 
+                    @endif
+
+            @endif                    
                 </div>
 
                 <!--div class="links">

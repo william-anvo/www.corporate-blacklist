@@ -21,6 +21,8 @@ class BLoginController extends Controller {
 
     public function doLogin(Request $request) {
         //auth USER
+//dd(request()->name);
+//request()->merge(array('name' => strtoupper(request()->name)));        
         if (Auth::attempt(['name' => $request->input('name'), 'password' => $request->input('password'), 'acc_status' => '1'], true)) {            //auth USER  // true || false
             auth()->user()->updated_at = new DateTime();
             auth()->user()->save();
@@ -28,7 +30,7 @@ class BLoginController extends Controller {
             $isadmin = Auth::user()->is_admin;                           // 1 || 0
 
             if ($isadmin == '1') {        //is active
-                return redirect()->route('admin.dashboard');
+                return view('session.admin.dashboard');
             } else {
                 return redirect()->home();
             }

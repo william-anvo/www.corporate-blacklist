@@ -75,6 +75,9 @@
                 <b>银行卡号 |      <font style="font-size: 10px"> Card No           </font></b>
             </div>
             <div class="divTableHead" style="background-color:  #E5E4E2">
+                <b>银行 |      <font style="font-size: 10px"> Banker          </font></b>
+            </div>
+            <div class="divTableHead" style="background-color:  #E5E4E2">
                 <b>银行卡开户区 |   <font style="font-size: 10px"> Issued Place    </font></b>
             </div>
             <div class="divTableHead" style="background-color:  #E5E4E2">

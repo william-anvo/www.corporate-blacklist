@@ -11,18 +11,18 @@ class AdminController extends Controller
     public function __construct() {
         $this->middleware('admin',['except' => 'doLogout']);
     }    
-    //
-    public function showAddBlackList(){
+//
+//    public function showAddBlackList(){
+//        
+//        return view('session.admin.showAddBlackList');
+//    } 
+
+    public function showCustBlacklistForm(){
         
         return view('session.admin.showAddBlackList');
     } 
 
-    public function showDashboard(){
-        
-        return view('session.admin.dashboard');
-    } 
-
-    public function doAddBlackList(Request $request){
+    public function addCustBlacklistForm(Request $request){
         
 //dd($request->all());
 
