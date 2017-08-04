@@ -5,18 +5,24 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">银行卡黑名单</div>
-@if (Auth::user()->is_admin == '1')       
-       <li>
-           <a href="{{ route('cust.blacklist.add.show') }}"
-               onclick="event.preventDefault();
-                        document.getElementById('cust.blacklist.add.show').submit();">
-                         【用户卡】黑名单
-           </a>
-            <form id="cust.blacklist.add.show" action="{{ route('cust.blacklist.add.show') }}" method="POST" style="display: none;">
-                {{ csrf_field() }}
-            </form>           
-@endif
+   
+<div class="panel-heading">银行卡黑名单
+@if (Auth::user()->is_admin == '1')
+<!--                        <tr>
+                            <td rowspan="auto">-->
+                                <b><a href="{{ route('cust.blacklist.add.show') }}" onclick="event.preventDefault(); document.getElementById('cust.blacklist.add.show').submit();">
+                                        <button class="text" style="float: right">
+                                           添加【用户卡】黑名单
+                                        </button> 
+                                </a></b>
+                                <form id="cust.blacklist.add.show" action="{{ route('cust.blacklist.add.show') }}" method="POST" style="display: none;">
+                                    {{ csrf_field() }}
+                                </form>                                  
+<!--                            </td>
+                        </tr>-->
+@endif   
+</div>
+
                 <div class="panel-body">
                     <table class="table">
                         <tr>
@@ -89,6 +95,7 @@
 
                             <td rowspan="auto"><b><button class="text">搜索 / <font style="font-size: 8px">Search</font></button></b></td>   
                         </tr>
+                  
                     </table>
 <!--                    <table class="table">
                         <tr>
@@ -103,14 +110,17 @@
     <div class="divTableBody">
         <div class="divTableRow">
             <div class="divTableHead" style="background-color:  #E5E4E2">
+                <b>干部 |      <font style="font-size: 10px"> Division </font></b>
+            </div>
+            <div class="divTableHead" style="background-color:  #E5E4E2">
                 <b>银行卡号 |      <font style="font-size: 10px"> Card No           </font></b>
             </div>
             <div class="divTableHead" style="background-color:  #E5E4E2">
                 <b>银行 |      <font style="font-size: 10px"> Banker          </font></b>
             </div>
 <!--            <div class="divTableHead" style="background-color:  #E5E4E2">
-                <b>银行卡开户区 |   <font style="font-size: 10px"> Issued Place    </font></b>
-            </div>-->
+    <b>银行卡开户区 |   <font style="font-size: 10px"> Issued Place    </font></b>
+</div>-->
             <div class="divTableHead" style="background-color:  #E5E4E2">
                 <b>银行卡持有人 |   <font style="font-size: 10px"> Name_(ID)         </font></b>
             </div>
@@ -118,18 +128,22 @@
                 <b>备注 |         <font style="font-size: 10px"> Remark         </font></b>    
             </div>
         </div>
-
+        
+<!-- DivTable.com START -->
         <div class="divTableRow" >
+            <div class="divTableCell" style="width: 13%;text-align: center">
+               LGV
+            </div>
             <div class="divTableCell" style="width: 25%">
                463 XXXX XXXX XXXX 5838
             </div>
-            <div class="divTableCell" style="width: 15%">
+            <div class="divTableCell" style="width: 20%">
               中国邮政储蓄银行
             </div>
             <div class="divTableCell" style="width: 20%">
                黄晓明
             </div>
-            <div class="divTableCell" style="width: 30%">
+            <div class="divTableCell" style="width: 15%">
               
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown">
@@ -148,133 +162,24 @@
             </div>            
 
         </div>
+<!-- DivTable.com -->
+
+
+<!-- DivTable.com START -->
         <div class="divTableRow" >
-            <div class="divTableCell" style="width: 25%">
-               463 XXXX XXXX XXXX 5458
+            <div class="divTableCell" style="width: 10%">
+               LGV
             </div>
-            <div class="divTableCell" style="width: 15%">
-              中国建设银行
+            <div class="divTableCell" style="width: 30%">
+               463 XXXX XXXX XXXX 5838
             </div>
             <div class="divTableCell" style="width: 20%">
-               黄晓明
-            </div>
-            <div class="divTableCell" style="width: 30%">
-              
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="dropdown">
-                        <a href="#" data-toggle="dropdown" role="button" style="padding-top: 1px !important;padding-bottom: 1px !important;" aria-expanded="false" class="dropdown-toggle">
-                            备注详情<span class="caret"></span></a> 
-                        <ul role="menu" class="dropdown-menu remark"> 
-                            <li>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</li>
-                            <li>XXXXXXXXXXXXXXXXXXX館</li>
-                            <li>黑名单XX</li>
-                            <li>黑名单2</li>
-                            <li>黑名单1</li>
-                        </ul>
-                    </li>
-                </ul>
-            
-            </div>            
-
-        </div>
-        <div class="divTableRow" >
-            <div class="divTableCell" style="width: 25%">
-               463 XXXX XXXX XXXX 5855
-            </div>
-            <div class="divTableCell" style="width: 15%">
-              中国银行
-            </div>
-            <div class="divTableCell" style="width: 20%">
-               黄晓
-            </div>
-            <div class="divTableCell" style="width: 30%">
-              
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="dropdown">
-                        <a href="#" data-toggle="dropdown" role="button" style="padding-top: 1px !important;padding-bottom: 1px !important;" aria-expanded="false" class="dropdown-toggle">
-                            备注详情<span class="caret"></span></a> 
-                        <ul role="menu" class="dropdown-menu remark"> 
-                            <li>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</li>
-                            <li>XXXXXXXXXXXXXXXXXXX館</li>
-                            <li>黑名单XX</li>
-                            <li>黑名单2</li>
-                            <li>黑名单1</li>
-                        </ul>
-                    </li>
-                </ul>
-            
-            </div>            
-
-        </div>
-        <div class="divTableRow" >
-            <div class="divTableCell" style="width: 25%">
-               463 XXXX XXXX XXXX 5858
-            </div>
-            <div class="divTableCell" style="width: 15%">
-              浦发银行
-            </div>
-            <div class="divTableCell" style="width: 20%">
-               黄晓明
-            </div>
-            <div class="divTableCell" style="width: 30%">
-              
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="dropdown">
-                        <a href="#" data-toggle="dropdown" role="button" style="padding-top: 1px !important;padding-bottom: 1px !important;" aria-expanded="false" class="dropdown-toggle">
-                            备注详情<span class="caret"></span></a> 
-                        <ul role="menu" class="dropdown-menu remark"> 
-                            <li>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</li>
-                            <li>XXXXXXXXXXXXXXXXXXX館</li>
-                            <li>黑名单XX</li>
-                            <li>黑名单2</li>
-                            <li>黑名单1</li>
-                        </ul>
-                    </li>
-                </ul>
-            
-            </div>            
-
-        </div>
-        <div class="divTableRow" >
-            <div class="divTableCell" style="width: 25%">
-               463 XXXX XXXX XXXX 58582
-            </div>
-            <div class="divTableCell" style="width: 15%">
               中国邮政储蓄银行
             </div>
             <div class="divTableCell" style="width: 20%">
                黄晓明
             </div>
-            <div class="divTableCell" style="width: 30%">
-              
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="dropdown">
-                        <a href="#" data-toggle="dropdown" role="button" style="padding-top: 1px !important;padding-bottom: 1px !important;" aria-expanded="false" class="dropdown-toggle">
-                            备注详情<span class="caret"></span></a> 
-                        <ul role="menu" class="dropdown-menu remark"> 
-                            <li>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</li>
-                            <li>XXXXXXXXXXXXXXXXXXX館</li>
-                            <li>黑名单XX</li>
-                            <li>黑名单2</li>
-                            <li>黑名单1</li>
-                        </ul>
-                    </li>
-                </ul>
-            
-            </div>            
-
-        </div>
-        <div class="divTableRow" >
-            <div class="divTableCell" style="width: 25%">
-               463 XXXX XXXX XXXX 5858
-            </div>
             <div class="divTableCell" style="width: 15%">
-              兴业银行
-            </div>
-            <div class="divTableCell" style="width: 20%">
-               晓明
-            </div>
-            <div class="divTableCell" style="width: 30%">
               
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown">
@@ -293,125 +198,12 @@
             </div>            
 
         </div>
-        <div class="divTableRow" >
-            <div class="divTableCell" style="width: 25%">
-               463 XXXX XXXX XXXX 5858
-            </div>
-            <div class="divTableCell" style="width: 15%">
-              中国光大银行
-            </div>
-            <div class="divTableCell" style="width: 20%">
-               黄晓明
-            </div>
-            <div class="divTableCell" style="width: 30%">
-              
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="dropdown">
-                        <a href="#" data-toggle="dropdown" role="button" style="padding-top: 1px !important;padding-bottom: 1px !important;" aria-expanded="false" class="dropdown-toggle">
-                            备注详情<span class="caret"></span></a> 
-                        <ul role="menu" class="dropdown-menu remark"> 
-                            <li>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</li>
-                            <li>XXXXXXXXXXXXXXXXXXX館</li>
-                            <li>黑名单XX</li>
-                            <li>黑名单2</li>
-                            <li>黑名单1</li>
-                        </ul>
-                    </li>
-                </ul>
-            
-            </div>            
+<!-- DivTable.com -->
 
-        </div>
-        <div class="divTableRow" >
-            <div class="divTableCell" style="width: 25%">
-               222 XXXX XXXX XXXX 5858
-            </div>
-            <div class="divTableCell" style="width: 15%">
-              交通银行
-            </div>
-            <div class="divTableCell" style="width: 20%">
-               晓明
-            </div>
-            <div class="divTableCell" style="width: 30%">
-              
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="dropdown">
-                        <a href="#" data-toggle="dropdown" role="button" style="padding-top: 1px !important;padding-bottom: 1px !important;" aria-expanded="false" class="dropdown-toggle">
-                            备注详情<span class="caret"></span></a> 
-                        <ul role="menu" class="dropdown-menu remark"> 
-                            <li>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</li>
-                            <li>XXXXXXXXXXXXXXXXXXX館</li>
-                            <li>黑名单XX</li>
-                            <li>黑名单2</li>
-                            <li>黑名单1</li>
-                        </ul>
-                    </li>
-                </ul>
-            
-            </div>            
 
-        </div>
-        <div class="divTableRow" >
-            <div class="divTableCell" style="width: 25%">
-               611 XXXX XXXX XXXX 5858
-            </div>
-            <div class="divTableCell" style="width: 15%">
-              中国邮政储蓄银行
-            </div>
-            <div class="divTableCell" style="width: 20%">
-               黄晓明
-            </div>
-            <div class="divTableCell" style="width: 30%">
-              
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="dropdown">
-                        <a href="#" data-toggle="dropdown" role="button" style="padding-top: 1px !important;padding-bottom: 1px !important;" aria-expanded="false" class="dropdown-toggle">
-                            备注详情<span class="caret"></span></a> 
-                        <ul role="menu" class="dropdown-menu remark"> 
-                            <li>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</li>
-                            <li>XXXXXXXXXXXXXXXXXXX館</li>
-                            <li>黑名单XX</li>
-                            <li>黑名单2</li>
-                            <li>黑名单1</li>
-                        </ul>
-                    </li>
-                </ul>
-            
-            </div>            
-
-        </div>
-        <div class="divTableRow" >
-            <div class="divTableCell" style="width: 25%">
-               622 XXXX XXXX XXXX 5858
-            </div>
-            <div class="divTableCell" style="width: 15%">
-              华夏银行
-            </div>
-            <div class="divTableCell" style="width: 20%">
-               黄明
-            </div>
-            <div class="divTableCell" style="width: 30%">
-              
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="dropdown">
-                        <a href="#" data-toggle="dropdown" role="button" style="padding-top: 1px !important;padding-bottom: 1px !important;" aria-expanded="false" class="dropdown-toggle">
-                            备注详情<span class="caret"></span></a> 
-                        <ul role="menu" class="dropdown-menu remark"> 
-                            <li>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</li>
-                            <li>XXXXXXXXXXXXXXXXXXX館</li>
-                            <li>黑名单XX</li>
-                            <li>黑名单2</li>
-                            <li>黑名单1</li>
-                        </ul>
-                    </li>
-                </ul>
-            
-            </div>            
-
-        </div>
     </div>
 </div>
-<!-- DivTable.com -->
+
 
                     
 

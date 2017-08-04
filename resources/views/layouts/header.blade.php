@@ -111,47 +111,51 @@ $('#name').blur(function(){
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
 
-@if (Auth::check())
+<!--@if (Auth::check())--> <?php // @if (Auth::user()->is_admin == '1')      ?>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                     <b>{{ Auth::user()->name }}</b> <span class="caret"></span>
                                 </a>
                                 <ul class="dropdown-menu" role="menu">
-                             <!--@if (Auth::user()->is_admin == '1')-->       
+
                                     <li>
                                         <a href="{{ route('cust.blacklist') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('cust.blacklist').submit();">
                                                       【用户卡】黑名单
                                         </a>
-                             <!--@endif-->
+
                                         <form id="cust.blacklist" action="{{ route('cust.blacklist') }}" method="POST" style="display: none;">
                                             {{ csrf_field() }}
                                         </form>
                                     </li>
                                     
                                     <li style="background-color:#999">【公司卡】黑名单
-<!--                                        <a href="#"
-                                            onclick="event.preventDefault();
-                                                     document.getElementById('comp.blacklist').submit();">
-                                                      【公司卡】黑名单
-                                        </a>
+<!--                                        
+<a href="#"
+onclick="event.preventDefault();
+         document.getElementById('comp.blacklist').submit();">
+          【公司卡】黑名单
+</a>
 
-                                        <form id="comp.blacklist" action="#" method="POST" style="display: none;">
-                                            {{ csrf_field() }}
-                                        </form>-->
+<form id="comp.blacklist" action="#" method="POST" style="display: none;">
+{{ csrf_field() }}
+</form>
+-->
                                     </li>
 
                                     <li style="background-color:#999">【I.P】 黑名单
-<!--                                        <a href="#"
-                                            onclick="event.preventDefault();
-                                                     document.getElementById('ip.blacklist').submit();">
-                                                      【I.P】 黑名单
-                                        </a>
+<!-- 
+<a href="#"
+onclick="event.preventDefault();
+         document.getElementById('ip.blacklist').submit();">
+          【I.P】 黑名单
+</a>
 
-                                        <form id="ip.blacklist" action="#" method="POST" style="display: none;">
-                                            {{ csrf_field() }}
-                                        </form>-->
+<form id="ip.blacklist" action="#" method="POST" style="display: none;">
+{{ csrf_field() }}
+</form>
+-->
                                     </li>
                                     <li>
                                         <a href="{{ route('resetpw') }}"
@@ -178,10 +182,10 @@ $('#name').blur(function(){
                                 </ul>
                             </li>
 
-@else
+<!--@else-->
                             <li><a href="{{ route('blogin') }}"><b>登录</b></a></li>
                             <li><a href="{{ route('bregister') }}"><b>注册</b></a></li>
-@endif
+<!--@endif-->
                     </ul>
                 </div>
             </div>

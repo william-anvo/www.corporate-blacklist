@@ -72,6 +72,9 @@
     <div class="divTableBody">
         <div class="divTableRow">
             <div class="divTableHead" style="background-color:  #E5E4E2">
+                <b>干部 |      <font style="font-size: 10px"> Division           </font></b>
+            </div>
+            <div class="divTableHead" style="background-color:  #E5E4E2">
                 <b>银行卡号 |      <font style="font-size: 10px"> Card No           </font></b>
             </div>
             <div class="divTableHead" style="background-color:  #E5E4E2">
@@ -86,6 +89,9 @@
         </div>
 
         <div class="divTableRow" >
+            <div class="divTableCell" style="width: 30%">
+               46346578545685858
+            </div>
             <div class="divTableCell" style="width: 30%">
                46346578545685858
             </div>
