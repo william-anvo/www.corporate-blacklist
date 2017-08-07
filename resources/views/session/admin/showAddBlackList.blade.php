@@ -7,7 +7,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Add Black List Details</div>
                 <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{route('cust.blacklist.add.show.act')}}">
+                    <form class="form-horizontal" method="POST" action="{{route('cust.blacklist.add.act')}}">
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('bankcard_no') ? ' has-error' : '' }}">

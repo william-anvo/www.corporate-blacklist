@@ -89,9 +89,9 @@ Route::match(['get', 'post'], '/custblacklist/add',array(
     'uses' =>'Admin\AdminController@showCustBlacklistForm'
     ));
 
-Route::match(['get', 'post'], '/custblacklist/add/act', array(
-    'as'=> 'cust.blacklist.add.show.act',
-    'uses' =>'Admin\AdminController@addCustBlacklistForm'
+Route::match(['post'], '/custblacklist/add/act', array(
+    'as'=> 'cust.blacklist.add.act',
+    'uses' =>'Admin\AdminController@addCustBlacklistAct'
     ));
 
 

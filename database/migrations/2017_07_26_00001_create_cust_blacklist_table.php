@@ -28,6 +28,7 @@ class CreateBlackListTable extends Migration
             
 //            $table->boolean('acc_status')->default(0);  // active = 1 , non-active = 0 
 //            $table->boolean('is_admin')->default(0);			
+            $table->string('division')->default(0);			
 
             $table->string('creator');
             $table->string('remark');

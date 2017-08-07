@@ -9,31 +9,25 @@ class AdminController extends Controller
 {
     
     public function __construct() {
-        $this->middleware('admin',['except' => 'doLogout']);
+//        $this->middleware('admin',['except' => 'doLogout']);
     }    
 //
-//    public function showAddBlackList(){
-//        
-//        return view('session.admin.showAddBlackList');
-//    } 
-
     public function showCustBlacklistForm(){
         
         return view('session.admin.showAddBlackList');
     } 
 
-    public function addCustBlacklistForm(Request $request){
+    public function addCustBlacklistAct(Request $request){
         
-//dd($request->all());
+
 
         $this->validate(request(), [
             'bankcard_no' => 'required|digits_between:15,20|unique:blacklist',
             'bank_name' => 'required|integer|between:25,40',
             'holder_name' => 'max:50',
         ]);
-        
-dd($request->all());
-
+// dd($request->all());       
+//dd($request->all());
         //Create and Save
 ////        dd(request('name'));
 //        Blacklist::create([

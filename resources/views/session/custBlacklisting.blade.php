@@ -93,7 +93,7 @@
                         </tr>                 
                         <tr>
 
-                            <td rowspan="auto"><b><button class="text">搜索 / <font style="font-size: 8px">Search</font></button></b></td>   
+                            <td rowspan="3"><b><button class="text">搜索 / <font style="font-size: 8px">Search</font></button></b></td>   
                         </tr>
                   
                     </table>
@@ -110,7 +110,7 @@
     <div class="divTableBody">
         <div class="divTableRow">
             <div class="divTableHead" style="background-color:  #E5E4E2">
-                <b>干部 |      <font style="font-size: 10px"> Division </font></b>
+                <b>中心名称 |      <font style="font-size: 10px"> Division </font></b>
             </div>
             <div class="divTableHead" style="background-color:  #E5E4E2">
                 <b>银行卡号 |      <font style="font-size: 10px"> Card No           </font></b>
@@ -130,20 +130,20 @@
         </div>
         
 <!-- DivTable.com START -->
-        <div class="divTableRow" >
-            <div class="divTableCell" style="width: 13%;text-align: center">
+        <div class="divTableRow">
+            <div class="divTableCell" style="width: 15%;text-align: center">
                LGV
             </div>
-            <div class="divTableCell" style="width: 25%">
+            <div class="divTableCell" style="width: 20%">
                463 XXXX XXXX XXXX 5838
             </div>
-            <div class="divTableCell" style="width: 20%">
+            <div class="divTableCell" style="width: 13%">
               中国邮政储蓄银行
             </div>
-            <div class="divTableCell" style="width: 20%">
+            <div class="divTableCell" style="width: 22%">
                黄晓明
             </div>
-            <div class="divTableCell" style="width: 15%">
+            <div class="divTableCell" style="width: 18%">
               
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown">

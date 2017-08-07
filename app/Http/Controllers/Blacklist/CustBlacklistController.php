@@ -15,5 +15,4 @@ class CustBlacklistController extends Controller
     public function show() {
         return view('session.custBlacklisting');
     }
-    //
 }
