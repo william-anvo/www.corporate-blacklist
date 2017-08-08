@@ -2,14 +2,18 @@
 
 namespace App\Http\Controllers\Admin;
 
+use DateTime;
+use App\CustBlacklist;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
 
 class AdminController extends Controller
 {
     
     public function __construct() {
-//        $this->middleware('admin',['except' => 'doLogout']);
+        $this->middleware('admin',['except' => 'doLogout']);
     }    
 //
     public function showCustBlacklistForm(){
@@ -19,28 +23,38 @@ class AdminController extends Controller
 
     public function addCustBlacklistAct(Request $request){
         
-
-
+// dd();  
         $this->validate(request(), [
-            'bankcard_no' => 'required|digits_between:15,20|unique:blacklist',
-            'bank_name' => 'required|integer|between:25,40',
-            'holder_name' => 'max:50',
+//            'bankcard_no' => 'required|regex:/^\d{15,20}$/|unique:cust_blacklist,division = '.Auth::user()->division.',bankcard_no',
+            'bankcard_no' => 'required|regex:/^\d{15,20}$/|unique:cust_blacklist',
+            'bank_name' => 'required|string',
+            'card_area' => 'nullable|string',
+            'holder_name' => 'nullable|string',
+            'card_type' => 'nullable|string',
+            'remark' => 'nullable|string',
         ]);
 // dd($request->all());       
-//dd($request->all());
         //Create and Save
-////        dd(request('name'));
-//        Blacklist::create([
-//                    'bankcard_no' => request('bankcard_no'),
-//                    'bank_name' => request('bank_name'),
-//                    'holder_name' => request('holder_name'),
-//                    'creator' => Auth::user()->division, 
-//                    'update_at' => $now, 
-//                    'create_at' => $now, 
-//        ]);
+
+        CustBlacklist::create([
+                    'bankcard_no' => request('bankcard_no'),
+                    'bank_name' => request('bank_name'),
+                    'card_area' => request('card_area'),
+            
+                    'holder_name' => request('holder_name'),
+                    'card_type' => request('card_type'),
+      
+                    'division' => Auth::user()->division, 
+                    'creator' => Auth::user()->name, 
+                    'remark' => request('remark'), 
+                    'update_at' => new DateTime(), 
+                    'create_at' => new DateTime(), 
+        ]);
         
-        \Session::flash('flash_message','资料已保存');
-        return view('session.admin.showAddBlackList');
+//        \Session::flash('flash_message','资料已保存');
+//        return view('session.custBlacklisting');
+        return Redirect::to('/custblacklist')->with('message', '资料已保存');
+
     } 
     
     

@@ -1,4 +1,7 @@
 @extends('layouts.header')
+@if(Session::has('message'))
+    <div class="alert alert-success">&#169;<em> {!! session('message') !!}</em></div>
+@endif
 
 @section('content')
 <div class="container">
@@ -164,33 +167,32 @@
         </div>
 <!-- DivTable.com -->
 
-
+@foreach ($blacklistings as $blacklisting)
+<!-- DivTable.com -->
 <!-- DivTable.com START -->
         <div class="divTableRow" >
-            <div class="divTableCell" style="width: 10%">
-               LGV
-            </div>
-            <div class="divTableCell" style="width: 30%">
-               463 XXXX XXXX XXXX 5838
+            <div class="divTableCell" style="width: 15%;text-align: center">
+               {{$blacklisting->division}}
             </div>
             <div class="divTableCell" style="width: 20%">
-              中国邮政储蓄银行
+               {{$blacklisting->bankcard_no}}
             </div>
-            <div class="divTableCell" style="width: 20%">
-               黄晓明
+            <div class="divTableCell" style="width: 13%">
+              {{$blacklisting->bank_name}}
             </div>
-            <div class="divTableCell" style="width: 15%">
+            <div class="divTableCell" style="width: 22%">
+               {{$blacklisting->holder_name}}
+            </div>
+            <div class="divTableCell" style="width: 18%">
               
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown">
                         <a href="#" data-toggle="dropdown" role="button" style="padding-top: 1px !important;padding-bottom: 1px !important;" aria-expanded="false" class="dropdown-toggle">
                             备注详情<span class="caret"></span></a> 
                         <ul role="menu" class="dropdown-menu remark"> 
-                            <li>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</li>
-                            <li>XXXXXXXXXXXXXXXXXXX館</li>
-                            <li>黑名单XX</li>
-                            <li>黑名单2</li>
-                            <li>黑名单1</li>
+
+                            <li>{{$blacklisting->remark}}</li>
+
                         </ul>
                     </li>
                 </ul>
@@ -199,8 +201,7 @@
 
         </div>
 <!-- DivTable.com -->
-
-
+@endforeach
     </div>
 </div>
 

@@ -69,10 +69,20 @@ Route::match(['get', 'post'],'/resetpwd',array(
 /*----------------------------*/
 //      Black List Function
 /*----------------------------*/
-Route::match(['get', 'post'],'/custblacklist',array(
-    'as'=> 'cust.blacklist',
-    'uses' =>'Blacklist\CustBlacklistController@show'
-    ));
+//Route::match(['get'],'/custblacklist',array(
+//    'as'=> 'cust.blacklist',
+//    'uses' =>'Blacklist\CustBlacklistController@show'
+//    ));
+Route::match(['get','post'],'/custblacklist',['as' =>'cust.blacklist',function(){
+    
+//    'uses' =>'Blacklist\CustBlacklistController@show'
+//    );
+$blacklistings = DB::table('cust_blacklist')->get();
+//        
+//        //        dd($blacklistings);
+        return view('session.custBlacklisting',compact('blacklistings'));
+//        return $blacklistings;
+}]);
 
 
 Route::group(['middleware' => 'admin'], function(){

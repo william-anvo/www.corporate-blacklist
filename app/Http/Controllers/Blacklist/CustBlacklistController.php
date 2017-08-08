@@ -13,6 +13,15 @@ class CustBlacklistController extends Controller
     }
 
     public function show() {
-        return view('session.custBlacklisting');
+        
+//        $blacklistings = \App\CustBlacklist::with(array('bankcard_no','bank_name','holder_name','division','remark'))
+//                ->where('deleted','0')
+//                ->orderBy('id','ASC')
+//                ->get();
+//$blacklistings = DB::table('cust_blacklist')->get();
+////        
+////        //        dd($blacklistings);
+////        return view('session.custBlacklisting',compact('blacklistings'));
+//        return $blacklistings;
     }
 }
