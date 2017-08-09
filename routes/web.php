@@ -73,16 +73,7 @@ Route::match(['get', 'post'],'/resetpwd',array(
 //    'as'=> 'cust.blacklist',
 //    'uses' =>'Blacklist\CustBlacklistController@show'
 //    ));
-Route::match(['get','post'],'/custblacklist',['as' =>'cust.blacklist',function(){
-    
-//    'uses' =>'Blacklist\CustBlacklistController@show'
-//    );
-$blacklistings = DB::table('cust_blacklist')->get();
-//        
-//        //        dd($blacklistings);
-        return view('session.custBlacklisting',compact('blacklistings'));
-//        return $blacklistings;
-}]);
+
 
 
 Route::group(['middleware' => 'admin'], function(){
@@ -104,7 +95,14 @@ Route::match(['post'], '/custblacklist/add/act', array(
     'uses' =>'Admin\AdminController@addCustBlacklistAct'
     ));
 
-
+//Route::match(['get','post'],'/custblacklist',['as' =>'cust.blacklist',function(){
+//    
+////    'uses' =>'Blacklist\CustBlacklistController@show'
+////    );
+//$blacklistings = DB::table('cust_blacklist')->where('deleted','0')->orderBy('id', 'asc')->get();
+//
+//        return view('session.custBlacklisting',compact('blacklistings'));
+//}]);
 });
 
 Route::group(['middleware' => 'auth'], function(){
@@ -114,6 +112,11 @@ Route::group(['middleware' => 'auth'], function(){
 Route::match(['get', 'post'], '/user/dashboard', array(
     'as'=> 'user.dashboard',
     'uses' =>'userController@showDashboard'
+    ));
+
+Route::match(['get','post'],'/custblacklist', array(
+    'as'=> 'cust.blacklist',
+    'uses' =>'Blacklist\CustBlacklistController@show'
     ));
 
 });

@@ -4,7 +4,8 @@ namespace App\Http\Controllers\Blacklist;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-//use Illuminate\Support\Facades\Auth;
+use DB;
+use App\Quotation;
 
 class CustBlacklistController extends Controller
 {
@@ -14,14 +15,8 @@ class CustBlacklistController extends Controller
 
     public function show() {
         
-//        $blacklistings = \App\CustBlacklist::with(array('bankcard_no','bank_name','holder_name','division','remark'))
-//                ->where('deleted','0')
-//                ->orderBy('id','ASC')
-//                ->get();
-//$blacklistings = DB::table('cust_blacklist')->get();
-////        
-////        //        dd($blacklistings);
-////        return view('session.custBlacklisting',compact('blacklistings'));
-//        return $blacklistings;
+        $blacklistings = DB::table('cust_blacklist')->where('deleted','0')->orderBy('id', 'asc')->get();
+        return view('session.custBlacklisting',compact('blacklistings'));
+
     }
 }

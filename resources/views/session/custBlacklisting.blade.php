@@ -1,7 +1,5 @@
 @extends('layouts.header')
-@if(Session::has('message'))
-    <div class="alert alert-success">&#169;<em> {!! session('message') !!}</em></div>
-@endif
+
 
 @section('content')
 <div class="container">
@@ -113,6 +111,9 @@
     <div class="divTableBody">
         <div class="divTableRow">
             <div class="divTableHead" style="background-color:  #E5E4E2">
+                <b><font style="font-size: 10px"> No           </font></b>
+            </div>            
+            <div class="divTableHead" style="background-color:  #E5E4E2">
                 <b>中心名称 |      <font style="font-size: 10px"> Division </font></b>
             </div>
             <div class="divTableHead" style="background-color:  #E5E4E2">
@@ -128,12 +129,12 @@
                 <b>银行卡持有人 |   <font style="font-size: 10px"> Name_(ID)         </font></b>
             </div>
             <div class="divTableHead" style="background-color:  #E5E4E2">
-                <b>备注 |         <font style="font-size: 10px"> Remark         </font></b>    
+                <b style="float:right ;">备注 |         <font style="font-size: 10px"> Remark         </font></b>    
             </div>
         </div>
         
 <!-- DivTable.com START -->
-        <div class="divTableRow">
+<!--        <div class="divTableRow">
             <div class="divTableCell" style="width: 15%;text-align: center">
                LGV
             </div>
@@ -164,26 +165,29 @@
             
             </div>            
 
-        </div>
+        </div>-->
 <!-- DivTable.com -->
 
 @foreach ($blacklistings as $blacklisting)
 <!-- DivTable.com -->
 <!-- DivTable.com START -->
         <div class="divTableRow" >
-            <div class="divTableCell" style="width: 15%;text-align: center">
+            <div class="divTableHead" style="width: 1%;background-color:  #E5E4E2">
+                {{$loop->iteration}}    
+            </div>             
+            <div class="divTableCell" style="width: 12%;text-align: center">
                {{$blacklisting->division}}
             </div>
-            <div class="divTableCell" style="width: 20%">
+            <div class="divTableCell" style="width: 23%">
                {{$blacklisting->bankcard_no}}
             </div>
-            <div class="divTableCell" style="width: 13%">
+            <div class="divTableCell" style="width: 15%">
               {{$blacklisting->bank_name}}
             </div>
-            <div class="divTableCell" style="width: 22%">
+            <div class="divTableCell" style="width: 20%">
                {{$blacklisting->holder_name}}
             </div>
-            <div class="divTableCell" style="width: 18%">
+            <div class="divTableCell" style="width: 15%">
               
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown">
