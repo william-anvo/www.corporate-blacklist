@@ -32,21 +32,21 @@
                             <td><b><label>银行名</label>&nbsp;&nbsp;
                                     <select>
                                         <option selected=""> --- </option>
-                                        <option value="">中国工商银行</option>
-                                        <option value="">中国建设银行</option>
-                                        <option value="">中国农业银行</option>
-                                        <option value="">中国银行</option>
-                                        <option value="">招商银行</option>
-                                        <option value="">交通银行</option>
-                                        <option value="">中国民生银行</option>
-                                        <option value="">中信银行</option>
-                                        <option value="">浦发银行</option>
-                                        <option value="">广发银行</option>
-                                        <option value="">平安银行</option>
-                                        <option value="">兴业银行</option>
-                                        <option value="">华夏银行</option>
-                                        <option value="">中国光大银行</option>
-                                        <option value="">中国邮政储蓄银行</option>
+                                        <option value="1">中国工商银行</option>
+                                        <option value="2">中国建设银行</option>
+                                        <option value="3">中国农业银行</option>
+                                        <option value="4">中国银行</option>
+                                        <option value="5">招商银行</option>
+                                        <option value="6">交通银行</option>
+                                        <option value="7">中国民生银行</option>
+                                        <option value="8">中信银行</option>
+                                        <option value="9">浦发银行</option>
+                                        <option value="10">广发银行</option>
+                                        <option value="11">平安银行</option>
+                                        <option value="12">兴业银行</option>
+                                        <option value="13">华夏银行</option>
+                                        <option value="14">中国光大银行</option>
+                                        <option value="15">中国邮政储蓄银行</option>
                                     </select>
                                 </b></td>
                                 
@@ -114,10 +114,10 @@
                 <b><font style="font-size: 10px"> No           </font></b>
             </div>            
             <div class="divTableHead" style="background-color:  #E5E4E2">
-                <b>中心名称 |      <font style="font-size: 10px"> Division </font></b>
+                <b>中心 |      <font style="font-size: 10px"> Division </font></b>
             </div>
             <div class="divTableHead" style="background-color:  #E5E4E2">
-                <b>银行卡号 |      <font style="font-size: 10px"> Card No           </font></b>
+                <b>卡号 |      <font style="font-size: 10px"> Card No           </font></b>
             </div>
             <div class="divTableHead" style="background-color:  #E5E4E2">
                 <b>银行 |      <font style="font-size: 10px"> Banker          </font></b>
@@ -126,7 +126,7 @@
     <b>银行卡开户区 |   <font style="font-size: 10px"> Issued Place    </font></b>
 </div>-->
             <div class="divTableHead" style="background-color:  #E5E4E2">
-                <b>银行卡持有人 |   <font style="font-size: 10px"> Name_(ID)         </font></b>
+                <b>持卡人 |   <font style="font-size: 10px"> Holder Name_(ID)         </font></b>
             </div>
             <div class="divTableHead" style="background-color:  #E5E4E2">
                 <b style="float:right ;">备注 |         <font style="font-size: 10px"> Remark         </font></b>    
@@ -173,7 +173,7 @@
 <!-- DivTable.com START -->
         <div class="divTableRow" >
             <div class="divTableHead" style="width: 1%;background-color:  #E5E4E2">
-                {{$loop->iteration}}    
+                {{$loop->iteration + $skipped}}    
             </div>             
             <div class="divTableCell" style="width: 12%;text-align: center">
                {{$blacklisting->division}}
@@ -210,7 +210,7 @@
 </div>
 
 
-                    
+                    {!!$blacklistings->render()!!}
 
                     
                 </div>
