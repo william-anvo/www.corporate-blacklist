@@ -15,9 +15,7 @@ class CustBlacklistController extends Controller
         $this->middleware('auth',['except' => 'doLogout']);
     }
 
-    public function show() {
-        
-        
+    public function show() {        
         $sumCountRecord = DB::table('cust_blacklist')->where('deleted','0')->orderBy('id', 'asc')->count();
         $blacklistings = DB::table('cust_blacklist')->where('deleted','0')->orderBy('id', 'asc')->paginate(15);
 
