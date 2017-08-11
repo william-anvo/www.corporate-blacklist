@@ -9,9 +9,9 @@
                 <div class="panel-body">
                     <h4>    》<a href="{{ route('cust.blacklist') }}">【用户卡】黑名单</a>   </h4>
                     <p>&nbsp;</p>
-                    <h4>    》<a href="#">【公司卡】黑名单</a>  (待开发) </h4>
+                    <h4>    》<a href="#" style="background-color:#999">【公司卡】黑名单</a>  (待开发) </h4>
                     <p>&nbsp;</p>
-                    <h4>    》<a href="#">【I.P】 黑名单</a> (待开发)  </h4>
+                    <h4>    》<a href="#" style="background-color:#999">【I.P】 黑名单</a> (待开发)  </h4>
                     <p>&nbsp;</p>
                     <h4>    》<a href="#">更改密码</a>    </h4>
                     <p>&nbsp;</p>

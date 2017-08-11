@@ -18,12 +18,17 @@ class CustBlacklistController extends Controller
     public function show() {
         
         
+        $sumCountRecord = DB::table('cust_blacklist')->where('deleted','0')->orderBy('id', 'asc')->count();
         $blacklistings = DB::table('cust_blacklist')->where('deleted','0')->orderBy('id', 'asc')->paginate(15);
+
+//        $sum = count($blacklistings);
         
-        $blacklistings ->setPath('custblacklist');
-        
-        $skipped = ($blacklistings->currentPage() * $blacklistings->perPage()) - $blacklistings->perPage();
-        return view('session.custBlacklisting',compact(['blacklistings','skipped']));
+//        $blacklistings::paginate(15);
+        $blacklistings ->setPath('custblacklist');      // Paganation Cache 
+
+//        dd($sumTotalRecord);
+        $skipped = ($blacklistings->currentPage() * $blacklistings->perPage()) - $blacklistings->perPage(); // Paganation Loop Number to nexxt page 
+        return view('session.custBlacklisting',compact(['blacklistings','skipped','sumCountRecord']));
 
     }
 }

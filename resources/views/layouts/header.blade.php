@@ -13,9 +13,11 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/bankui.css') }}" rel="stylesheet">
-<!--<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>-->
-    <!--<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>-->    
+    <!--<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!--<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->  
+<script src="http://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="//code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
 <style>
 .dropdown-menu.remark{
         padding:15px;
@@ -75,11 +77,9 @@
 	display: table-row-group;
 }
 </style>
-<!--<script type="text/javascrip">
-$('#name').blur(function(){
-  this.value = this.value.toUpperCase();
-});
-</script>-->
+<script>
+$('#myDatepicker').datepicker();
+</script>
 </head>
 <body>
     <div id="app">
@@ -157,7 +157,7 @@ onclick="event.preventDefault();
 </form>
 -->
                                     </li>
-                                    <li>
+                                    <li style="background-color:#999">
                                         <a href="{{ route('resetpw') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('resetpw').submit();">

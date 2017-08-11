@@ -27,10 +27,23 @@
                 <div class="panel-body">
                     <table class="table">
                         <tr>
-                            <td><b><label>银行卡号</label>&nbsp;&nbsp;<input type="text" class="text" placeholder=""/></b></td>
-                            <td><b><label>银行卡持有人姓名</label>&nbsp;&nbsp;<input type="text" class="text" placeholder=""/></b></td>
+                            <td><b><label data-toggle="tooltip" data-placement="left" title="最后4位数字">银行卡号</b> </label>&nbsp;&nbsp;<input type="text" placeholder="  --最后4位数字--"  maxlength="4"/></td>
+                             <td><b><label>银行卡持有人姓名 </label>&nbsp;&nbsp;<input type="text" placeholder="" maxlength="10"/></b></td>
+                            <td>
+                                <b><label>被黑原因 </label>
+                                    <select style="width: 150px">
+                                        <option selected=""> --- </option>
+                                        <option>黑客/恶意 </option>
+                                        <option>投诉盗刷</option>
+                                        <option>其它..</option>
+                                    </select>
+                                </b>                            
+                            </td>     
+                  
+                        </tr>    
+                        <tr>
                             <td><b><label>银行名</label>&nbsp;&nbsp;
-                                    <select>
+                                    <select class="input">
                                         <option selected=""> --- </option>
                                         <option value="1">中国工商银行</option>
                                         <option value="2">中国建设银行</option>
@@ -48,10 +61,10 @@
                                         <option value="14">中国光大银行</option>
                                         <option value="15">中国邮政储蓄银行</option>
                                     </select>
-                                </b></td>
-                                
-                            <!--<td><b><label>--</label>&nbsp;&nbsp;<input type="text" class="text" placeholder=""/></b></td>-->
-<!--                            <td><b><label>省市区 : </label><br/><select>
+                                </b>
+                            </td>
+                            <td><b><label>省市区  </label>
+                                    <select>
                                         <option selected=""> --- </option>
                                         <option>北京</option>
                                         <option>天津</option>
@@ -87,14 +100,21 @@
                                         <option>台湾</option>
                                         <option>香港特别行政区</option>
                                         <option>澳门</option>
+                                    </select></b>
+                            </td>
+                            <td>
+                                <b><label>银行卡类</label>
+                                    <select style="width: 150px">
+                                        <option selected=""> --- </option>
+                                        <option>借记卡</option>
+                                        <option>其它</option>
                                     </select>
-                                -->
-                                </b></td>
-                                                         
-                        </tr>                 
+                                </b>                            
+                            </td>     
+                        </tr>                        
                         <tr>
 
-                            <td rowspan="3"><b><button class="text">搜索 / <font style="font-size: 8px">Search</font></button></b></td>   
+                            <td colspan="3"><b><button class="text">搜索 / <font style="font-size: 8px">Search</font></button></b></td>   
                         </tr>
                   
                     </table>
@@ -106,30 +126,36 @@
                             <td><b>备注 |         <font style="font-size: 10px"> Remark         </font></b></td>                            
                         </tr>
                     </table>    -->
-{{--  ----------------------------------------------------- --}}                
+{{--  ----------------------------------------------------- --}}           
 <div class="divTable" style="width: 100%; border: 0px solid #fff;">
     <div class="divTableBody">
         <div class="divTableRow">
             <div class="divTableHead" style="background-color:  #E5E4E2">
-                <b><font style="font-size: 10px"> No           </font></b>
+                <b><a href="#" data-toggle="tooltip" data-placement="left" title="No" style="text-decoration:none">No</a></b>
             </div>            
-            <div class="divTableHead" style="background-color:  #E5E4E2">
-                <b>中心 |      <font style="font-size: 10px"> Division </font></b>
+            <div class="divTableHead" style="background-color:  #E5E4E2">      
+                <b><a href="#" data-toggle="tooltip" data-placement="left" title="Division" style="text-decoration:none">中心</a></b>
             </div>
             <div class="divTableHead" style="background-color:  #E5E4E2">
-                <b>卡号 |      <font style="font-size: 10px"> Card No           </font></b>
+                <b><a href="#" data-toggle="tooltip" data-placement="left" title="Card No" style="text-decoration:none">卡号</a></b>
             </div>
             <div class="divTableHead" style="background-color:  #E5E4E2">
-                <b>银行 |      <font style="font-size: 10px"> Banker          </font></b>
-            </div>
-<!--            <div class="divTableHead" style="background-color:  #E5E4E2">
-    <b>银行卡开户区 |   <font style="font-size: 10px"> Issued Place    </font></b>
-</div>-->
-            <div class="divTableHead" style="background-color:  #E5E4E2">
-                <b>持卡人 |   <font style="font-size: 10px"> Holder Name_(ID)         </font></b>
+                <b><a href="#" data-toggle="tooltip" data-placement="left" title="Banker" style="text-decoration:none">银行</a></b>
             </div>
             <div class="divTableHead" style="background-color:  #E5E4E2">
-                <b style="float:right ;">备注 |         <font style="font-size: 10px"> Remark         </font></b>    
+                <b><a href="#" data-toggle="tooltip" data-placement="left" title="Card Area" style="text-decoration:none">省市区</a></b>
+            </div>
+            <div class="divTableHead" style="background-color:  #E5E4E2">
+                <b><a href="#" data-toggle="tooltip" data-placement="left" title="Card Type" style="text-decoration:none">银行卡类</a></b>
+            </div>
+            <div class="divTableHead" style="background-color:  #E5E4E2">
+                <b><a href="#" data-toggle="tooltip" data-placement="left" title="Holder Name_(ID)" style="text-decoration:none">持卡人</a></b>
+            </div>
+            <div class="divTableHead" style="background-color:  #E5E4E2">
+                <b><a href="#" data-toggle="tooltip" data-placement="left" title="Remark" style="text-decoration:none">备注</a></b>
+            </div>
+            <div class="divTableHead" style="background-color:  #E5E4E2">
+                <b><a href="#" data-toggle="tooltip" data-placement="left" title="Updated At" style="text-decoration:none">更新时间</a></b>
             </div>
         </div>
         
@@ -175,19 +201,27 @@
             <div class="divTableHead" style="width: 1%;background-color:  #E5E4E2">
                 {{$loop->iteration + $skipped}}    
             </div>             
-            <div class="divTableCell" style="width: 12%;text-align: center">
+            <div class="divTableCell" style="width: 6%;text-align: center">
                {{$blacklisting->division}}
             </div>
-            <div class="divTableCell" style="width: 23%">
+            <div class="divTableCell" style="width: 20%">
                {{$blacklisting->bankcard_no}}
             </div>
             <div class="divTableCell" style="width: 15%">
               {{$blacklisting->bank_name}}
             </div>
-            <div class="divTableCell" style="width: 20%">
+            <div class="divTableCell" style="width: 9%">
+              {{$blacklisting->card_area}}
+            </div>
+            <div class="divTableCell" style="width: 10%">
+              {{$blacklisting->card_type}}
+            </div>
+            <div class="divTableCell" style="width: 9%">
                {{$blacklisting->holder_name}}
             </div>
-            <div class="divTableCell" style="width: 15%">
+            
+            
+            <div class="divTableCell" style="width: 13%">
               
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown">
@@ -202,7 +236,10 @@
                 </ul>
             
             </div>            
-
+            <div class="divTableCell" style="width: 20%">
+               {{date('Y-m-d | H:i',strtotime($blacklisting->updated_at))}}
+            </div>
+            
         </div>
 <!-- DivTable.com -->
 @endforeach
@@ -210,7 +247,7 @@
 </div>
 
 
-                    {!!$blacklistings->render()!!}
+<div><span style="float: left">{!!$blacklistings->render()!!}</span> <span class="pagination" style="float: right"><b>{!!$sumCountRecord!!}</b> x记录</span></div>
 
                     
                 </div>
@@ -218,4 +255,14 @@
         </div>
     </div>
 </div>
+<script type="text/javascript">
+
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();   
+});
+$('.date').datepicker({  
+       format: 'mm-dd-yyyy'
+     }); 
+     
+</script>
 @endsection
