@@ -35,15 +35,19 @@ class BLoginController extends Controller {
                 return redirect()->home();
             }
             auth()->logout();
+        \Session::flush();            
             return back()->withErrors(['message' => '101 Error.']);
         } else {
             auth()->logout();
+        \Session::flush();            
             return back()->withErrors(['message' => '登录失败。用户名或密码错误  |  These credentials do not match our records']);
         }
     }
 
     public function doLogout() {
         auth()->logout();
-        return redirect()->route('blogin');
+        \Session::flush();
+//        return redirect()->route('blogin');
+        return redirect(\URL::previous());
     }    
 }
